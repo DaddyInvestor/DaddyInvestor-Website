@@ -3,16 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f3ec">
-  <title>Daddy Investor — อยู่ให้รอดก่อน เดี๋ยวกำไรมาเอง</title>
-  <meta name="description" content="Daddy Investor กำลังสร้างคลังความรู้ใหม่เรื่องการลงทุน ระบบเทรด การบริหารความเสี่ยง และการใช้เงินซื้อเวลากลับคืนให้ชีวิต">
+  <meta name="theme-color" content="#fbfbf8">
+  <meta name="color-scheme" content="light">
+  <title>Daddy Investor — อยู่ให้รอดก่อน เพื่อมีชีวิตที่เลือกได้</title>
+  <meta name="description" content="Daddy Investor แบ่งปันแนวคิดการลงทุนอย่างเป็นระบบ ตั้งแต่ Risk Management, Grid / Close System, Trend Following และ DCA / ETF เพื่อสร้างทางเลือกและซื้อเวลากลับคืนให้ชีวิต">
   <link rel="canonical" href="https://daddyinvestor.com/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="th_TH">
   <meta property="og:site_name" content="Daddy Investor">
-  <meta property="og:title" content="Daddy Investor — อยู่ให้รอดก่อน เดี๋ยวกำไรมาเอง">
-  <meta property="og:description" content="เว็บไซต์กำลังปรับปรุง เพื่อสร้างคลังความรู้การลงทุนที่เข้าถึงง่ายและใช้งานได้จริง">
+  <meta property="og:title" content="Daddy Investor — อยู่ให้รอดก่อน เพื่อมีชีวิตที่เลือกได้">
+  <meta property="og:description" content="ความเสี่ยงมาก่อนผลตอบแทน ระบบสำคัญกว่าความเก่ง และเงินควรซื้อเวลากลับคืนให้ชีวิต">
   <meta property="og:url" content="https://daddyinvestor.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans+Thai:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -20,195 +24,507 @@
     "name": "Daddy Investor",
     "url": "https://daddyinvestor.com/",
     "sameAs": ["https://www.facebook.com/daddyinvestor"],
-    "description": "พื้นที่แบ่งปันความรู้เกี่ยวกับระบบการลงทุนและการบริหารความเสี่ยง"
+    "description": "พื้นที่แบ่งปันแนวคิดด้านการลงทุนอย่างเป็นระบบ การบริหารความเสี่ยง และการจัดสรรเงินทุน"
   }
   </script>
   <style>
     :root {
-      color-scheme: light;
-      --bg: #f5f3ec;
-      --ink: #17302e;
-      --muted: #5d6d68;
-      --line: #d7ddd6;
-      --accent: #b66843;
-      --accent-dark: #945234;
+      --paper: #fbfbf8;
+      --white: #ffffff;
+      --ink: #20262d;
+      --ink-deep: #171d23;
+      --blue: #456ba5;
+      --blue-light: #b6c4d2;
+      --muted: #65707b;
+      --rule: #e2e7eb;
+      --soft: #f4f6f7;
+      --mono: "IBM Plex Mono", "Courier New", monospace;
+      --thai: "IBM Plex Sans Thai", "Noto Sans Thai", "Leelawadee UI", Tahoma, sans-serif;
+      --serif: "Newsreader", Georgia, serif;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Noto Sans Thai", "Sarabun", Tahoma, system-ui, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--thai); -webkit-font-smoothing: antialiased; }
+    img, svg { max-width: 100%; }
     a { color: inherit; }
-    .skip {
-      position: absolute;
-      top: -100px;
-      left: 12px;
-      z-index: 10;
-      padding: 10px 16px;
-      background: white;
+    a:focus-visible, summary:focus-visible { outline: 3px solid #5d82be; outline-offset: 5px; }
+    ::selection { background: #cfdaeb; color: #111923; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .skip-link { position: fixed; z-index: 100; left: 14px; top: -80px; padding: 11px 16px; background: var(--white); box-shadow: 0 8px 30px #0002; }
+    .skip-link:focus { top: 14px; }
+    .container { max-width: 1312px; width: calc(100% - 104px); margin-inline: auto; }
+    .eyebrow { display: flex; align-items: center; gap: 15px; margin: 0; font: 500 11px/1.6 var(--mono); letter-spacing: .19em; text-transform: uppercase; color: #5f6a77; }
+    .eyebrow::after { content: ""; height: 1px; flex: 1; min-width: 35px; background: #b9c3cf; }
+    .section-num { color: var(--blue); }
+    .section-heading { font-size: clamp(37px, 4.3vw, 61px); line-height: 1.3; letter-spacing: -.055em; font-weight: 700; margin: 28px 0 0; }
+    .section-heading span { display: block; }
+    .body-copy { font-size: 16px; line-height: 1.95; color: var(--muted); }
+    .text-cta { display: inline-flex; gap: 15px; align-items: center; width: fit-content; padding: 5px 0 9px; text-decoration: none; color: var(--blue); font-size: 17px; font-weight: 600; border-bottom: 1px solid currentColor; transition: gap .2s ease, color .2s ease; }
+    .text-cta:hover { gap: 23px; color: #274d83; }
+    .text-cta svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.6; fill: none; }
+
+    /* Masthead */
+    .site-header { position: relative; z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
+    .masthead { min-height: 80px; display: flex; justify-content: space-between; gap: 30px; align-items: center; }
+    .wordmark { font: 500 clamp(26px, 2.2vw, 33px)/1 var(--serif); letter-spacing: -.055em; text-decoration: none; white-space: nowrap; }
+    .desktop-nav { display: flex; align-items: center; gap: 46px; margin-left: auto; }
+    .desktop-nav a { color: #35404b; text-decoration: none; font-size: 13px; font-weight: 600; transition: color .2s ease; }
+    .desktop-nav a:hover { color: var(--blue); }
+    .header-separator { width: 1px; height: 28px; background: #c4ccd5; }
+    .follow-pill { display: inline-flex; align-items: center; gap: 19px; background: #35619a; color: white; text-decoration: none; padding: 11px 17px 11px 22px; font: 500 12px/1 var(--mono); border-radius: 100px; transition: background .2s ease, transform .2s ease; }
+    .follow-pill:hover { background: #254c80; transform: translateY(-1px); }
+    .follow-pill span { font-size: 18px; line-height: 1; }
+    .mobile-menu { display: none; }
+
+    /* Hero: deliberate editorial hierarchy, not a generic product layout. */
+    .hero { overflow: hidden; border-bottom: 1px solid var(--rule); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); min-height: 650px; gap: 36px; align-items: center; padding-block: 55px 76px; }
+    .hero-copy { padding: 20px 0; position: relative; z-index: 2; }
+    .hero-copy .eyebrow { max-width: 545px; }
+    .hero h1 { font-size: clamp(55px, 5.55vw, 84px); font-weight: 700; line-height: 1.18; letter-spacing: -.06em; margin: 51px 0 31px; }
+    .hero h1 span { display: block; }
+    .hero-lead { max-width: 540px; margin: 0; font-size: clamp(16px, 1.25vw, 18px); color: #596472; line-height: 1.85; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 25px; margin-top: 34px; }
+    .hero-secondary { font-size: 13px; color: #566576; text-decoration: none; border-bottom: 1px solid #bdc9d5; padding-bottom: 4px; }
+    .hero-secondary:hover { color: var(--blue); }
+    .hero-aside { margin-top: 50px; font: 500 10px/1.6 var(--mono); letter-spacing: .17em; color: #657383; }
+    .hero-figure { position: relative; min-height: 520px; display: grid; place-items: center; }
+    .hero-figure::before { position: absolute; content: ""; inset: 2% 6%; background: linear-gradient(90deg, transparent calc(50% - .5px), rgba(174,186,200,.18) 50%, transparent calc(50% + .5px)); pointer-events: none; }
+    .hero-diagram { width: min(100%, 648px); display: block; overflow: visible; }
+    .hero-diagram text { font-family: var(--mono); }
+    .mobile-atlas { display: none; }
+    .diagram-caption { position: absolute; bottom: -2px; right: 4px; color: #82909f; font: 500 10px/1.6 var(--mono); letter-spacing: .16em; }
+
+    /* The narrow philosophy ribbon is a table of contents, not three feature cards. */
+    .ribbon { background: var(--ink); color: #eef3f7; }
+    .ribbon-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); min-height: 115px; align-items: stretch; }
+    .ribbon-item { display: flex; align-items: center; gap: 23px; padding: 27px 25px 26px 3px; }
+    .ribbon-item + .ribbon-item { border-left: 1px solid #53606b; padding-left: 34px; }
+    .ribbon-id { font: 500 11px var(--mono); color: #a9b6c5; }
+    .ribbon-label { display: block; font: 500 15px/1.5 var(--mono); letter-spacing: .13em; }
+    .ribbon-sub { display: block; font-size: 12px; color: #b4c0cb; margin-top: 4px; }
+
+    /* A founder introduction without fictional imagery. */
+    .origin { background: #fff; padding: 130px 0 132px; }
+    .origin-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .91fr); gap: 104px; }
+    .origin .section-heading { max-width: 610px; }
+    .origin .body-copy { max-width: 610px; margin: 30px 0 0; }
+    .origin-signoff { display: flex; align-items: center; gap: 14px; margin-top: 44px; font: 500 11px/1.7 var(--mono); color: #5d7188; letter-spacing: .15em; }
+    .origin-signoff::before { content: ""; width: 48px; height: 1px; background: var(--blue); }
+    .timeline { position: relative; border-left: 1px solid #91a9c9; margin-top: 49px; padding-left: 38px; }
+    .milestone { position: relative; padding: 0 0 57px; }
+    .milestone:last-child { padding-bottom: 0; }
+    .milestone::before { content: ""; position: absolute; left: -44px; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--blue); border: 2px solid white; box-shadow: 0 0 0 1px var(--blue); }
+    .milestone time { display: block; color: #27333d; font: 500 20px/1.2 var(--mono); letter-spacing: .03em; }
+    .milestone h3 { margin: 11px 0 15px; color: var(--blue); font: 500 12px/1.45 var(--mono); letter-spacing: .18em; }
+    .milestone p { max-width: 340px; margin: 0; font-size: 14px; line-height: 1.9; color: var(--muted); }
+    .timeline-foot { margin: 42px 0 0 40px; font: 500 10px/1.9 var(--mono); letter-spacing: .15em; color: #5f7182; }
+
+    /* Three principles, presented as editorial rows. */
+    .philosophy { padding: 115px 0 128px; background: var(--paper); border-top: 1px solid var(--rule); }
+    .philosophy-intro { display: flex; justify-content: space-between; align-items: end; gap: 70px; margin-bottom: 60px; }
+    .philosophy-intro .section-heading { max-width: 710px; }
+    .philosophy-intro p { max-width: 290px; margin: 0 0 8px; color: var(--muted); line-height: 1.8; font-size: 15px; }
+    .values { border-top: 1px solid #cbd5df; }
+    .value-row { display: grid; grid-template-columns: 105px minmax(0, 1fr) minmax(0, .85fr) 158px; align-items: center; gap: 27px; border-bottom: 1px solid #cbd5df; padding: 28px 0; min-height: 170px; }
+    .value-number { align-self: center; font: 400 clamp(58px, 6vw, 94px)/1 var(--serif); letter-spacing: -.075em; color: var(--blue); }
+    .value-name { border-left: 1px solid #cbd5df; padding-left: 28px; }
+    .value-name h3 { font: 500 clamp(15px, 1.4vw, 21px)/1.5 var(--mono); letter-spacing: .065em; margin: 0 0 8px; }
+    .value-name p { margin: 0; color: #657280; font-size: 15px; line-height: 1.55; }
+    .value-detail { padding-left: 26px; border-left: 1px solid #cbd5df; color: #6e7b87; line-height: 1.85; font-size: 14px; }
+    .value-icon { display: grid; place-items: center; min-width: 0; }
+    .value-icon svg { width: 116px; height: 86px; stroke: #9aacbf; fill: none; stroke-width: 1.2; }
+    .value-icon .accent { stroke: var(--blue); stroke-width: 1.8; }
+
+    /* Strategy roles: substantive content, not a decorative dashboard. */
+    .system-section { padding: 128px 0 130px; background: var(--ink); color: #f4f6f7; }
+    .system-section .section-num { color: #b0cbef; }
+    .system-section .eyebrow { color: #a6b9d0; }
+    .system-section .eyebrow::after { background: #596775; }
+    .system-intro { display: flex; gap: 80px; align-items: end; justify-content: space-between; margin-bottom: 50px; }
+    .system-intro .section-heading { max-width: 820px; margin-bottom: 0; }
+    .system-intro > p { max-width: 300px; color: #b9c4ce; font-size: 14px; line-height: 1.9; margin: 0 0 10px; }
+    .risk-frame { border: 1px solid #667d94; padding: 19px 26px; display: flex; justify-content: space-between; gap: 25px; align-items: center; }
+    .risk-frame strong { font: 500 13px/1.5 var(--mono); letter-spacing: .13em; color: #b0cbef; }
+    .risk-frame span { color: #b6c3ce; font-size: 13px; line-height: 1.7; }
+    .allocation-line { width: 1px; height: 40px; background: #728aaa; margin: 0 auto; }
+    .capital-bar { background: #3e689f; padding: 24px 34px; display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .capital-bar strong { font: 500 18px/1.4 var(--mono); letter-spacing: .15em; }
+    .capital-bar span { font-size: 13px; color: #e6ecf2; }
+    .strategy-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 1px; border-left: 1px solid #5d6c7c; border-top: 1px solid #5d6c7c; }
+    .strategy { padding: 42px 34px 48px; border-right: 1px solid #5d6c7c; border-bottom: 1px solid #5d6c7c; min-height: 260px; }
+    .strategy-key { font: 500 11px/1.5 var(--mono); letter-spacing: .18em; color: #9eb9d7; }
+    .strategy h3 { font-size: 24px; letter-spacing: -.04em; line-height: 1.3; margin: 22px 0 16px; }
+    .strategy p { font-size: 14px; line-height: 1.85; color: #b1bdc7; margin: 0; max-width: 330px; }
+    .systems-goal { display: flex; align-items: center; justify-content: space-between; gap: 25px; border-top: 1px solid #64778c; margin-top: 26px; padding-top: 28px; }
+    .systems-goal strong { font: 500 14px/1.5 var(--mono); letter-spacing: .16em; color: #b5ccee; }
+    .systems-goal span { color: #9eadba; font-size: 12px; line-height: 1.7; }
+
+    /* An indexed publication, not a grid of clickable fake article cards. */
+    .knowledge { background: #fff; padding: 132px 0 148px; }
+    .knowledge-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 72px; }
+    .knowledge-intro .section-heading { font-size: clamp(36px, 3.8vw, 56px); }
+    .knowledge-intro .body-copy { max-width: 410px; margin-top: 24px; }
+    .index-list { border-top: 1px solid #d2dae4; }
+    .index-row { display: grid; grid-template-columns: 45px minmax(0, 1fr) 140px; align-items: center; gap: 20px; border-bottom: 1px solid #d2dae4; min-height: 93px; padding: 17px 0; }
+    .index-id { font: 500 12px var(--mono); color: var(--blue); }
+    .index-row h3 { font: 500 clamp(16px, 1.35vw, 20px)/1.45 var(--mono); letter-spacing: .045em; margin: 0 0 4px; overflow-wrap: anywhere; }
+    .index-row p { margin: 0; color: #7d8994; font-size: 13px; line-height: 1.6; }
+    .index-status { font: 500 10px/1.5 var(--mono); letter-spacing: .12em; color: #647382; justify-self: end; text-align: right; }
+    .knowledge-note { margin-top: 22px; font-size: 12px; color: #647382; }
+
+    /* Closing editorial statement */
+    .closing { background: #192129; overflow: hidden; color: white; }
+    .closing-grid { display: grid; grid-template-columns: 1.3fr .7fr; align-items: center; gap: 60px; min-height: 405px; position: relative; padding-block: 86px; }
+    .closing-grid::after { content: ""; position: absolute; width: 700px; height: 700px; border-radius: 50%; border: 1px solid rgba(182,202,221,.21); right: -220px; top: -210px; pointer-events: none; }
+    .closing-grid::before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; border: 1px solid rgba(182,202,221,.12); right: -150px; top: -100px; pointer-events: none; }
+    .closing .eyebrow { color: #aab9cb; }
+    .closing .eyebrow::after { background: #687987; }
+    .closing h2 { font-size: clamp(40px, 4.9vw, 70px); font-weight: 600; line-height: 1.25; letter-spacing: -.06em; margin: 31px 0 18px; }
+    .closing p:not(.eyebrow) { color: #b0bcc7; line-height: 1.9; max-width: 620px; font-size: 15px; }
+    .closing-action { justify-self: end; position: relative; z-index: 2; }
+    .closing-action .text-cta { color: #b8d2f6; font-size: 16px; white-space: nowrap; }
+    .closing-action small { display: block; font: 500 10px/1.6 var(--mono); letter-spacing: .14em; color: #849aac; margin-top: 23px; }
+    .footer { background: #fff; border-top: 1px solid #e3e8ed; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 30px; align-items: center; min-height: 94px; }
+    .footer .wordmark { font-size: 23px; }
+    .footer-note { color: #64717c; font-size: 12px; text-align: right; }
+
+    @media (max-width: 1200px) {
+      .container { width: calc(100% - 64px); }
+      .hero-grid { gap: 15px; }
+      .hero h1 { font-size: clamp(50px, 5.6vw, 70px); }
+      .origin-grid { gap: 60px; }
+      .value-row { grid-template-columns: 82px 1.05fr 1fr 95px; gap: 14px; }
+      .value-name { padding-left: 17px; }
+      .value-detail { padding-left: 16px; }
+      .value-icon svg { width: 82px; }
+      .knowledge-grid { gap: 38px; }
     }
-    .skip:focus { top: 12px; }
-    .shell { width: min(1160px, calc(100% - 52px)); margin: auto; }
-    header { border-bottom: 1px solid var(--line); }
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-      min-height: 94px;
+    @media (max-width: 850px) {
+      .desktop-nav, .header-separator, .site-header .follow-pill { display: none; }
+      .container { width: calc(100% - 48px); }
+      .masthead { min-height: 72px; }
+      .mobile-menu { display: block; position: relative; }
+      .mobile-menu summary { cursor: pointer; list-style: none; display: flex; gap: 14px; align-items: center; color: var(--ink); font: 500 12px/1 var(--mono); letter-spacing: .08em; padding: 12px 2px; }
+      .mobile-menu summary::-webkit-details-marker { display: none; }
+      .menu-lines { display: grid; gap: 5px; width: 27px; }
+      .menu-lines i { display: block; height: 1px; background: currentColor; width: 100%; }
+      .mobile-links { position: absolute; z-index: 21; right: 0; top: calc(100% + 12px); width: min(300px, 88vw); border: 1px solid #d4dce5; box-shadow: 0 18px 35px #131d2620; padding: 14px 18px; background: var(--paper); }
+      .mobile-links a { display: block; padding: 13px 6px; border-bottom: 1px solid var(--rule); font-size: 14px; text-decoration: none; }
+      .mobile-links a:last-child { border-bottom: 0; color: var(--blue); }
+      .hero-grid { display: block; min-height: auto; padding-block: 75px 58px; }
+      .hero-copy { padding: 0; }
+      .hero h1 { font-size: clamp(46px, 8.1vw, 68px); margin: 34px 0 23px; }
+      .hero-lead { max-width: 670px; }
+      .hero-figure { min-height: 465px; margin-top: 55px; }
+      .hero-diagram { max-width: 615px; }
+      .origin, .philosophy, .system-section, .knowledge { padding: 94px 0 100px; }
+      .origin-grid, .knowledge-grid { grid-template-columns: 1fr; gap: 55px; }
+      .timeline { margin-top: 0; }
+      .philosophy-intro, .system-intro { display: block; }
+      .philosophy-intro > p, .system-intro > p { max-width: 620px; margin: 22px 0 0; }
+      .value-row { grid-template-columns: 70px 1.1fr 1.2fr; }
+      .value-icon { display: none; }
+      .strategy { padding: 30px 24px 38px; }
+      .strategy h3 { font-size: 20px; }
+      .closing-grid { gap: 25px; }
     }
-    .brand { display: flex; align-items: center; gap: 13px; text-decoration: none; }
-    .mark {
-      display: grid;
-      place-items: center;
-      width: 43px;
-      height: 43px;
-      border: 1.8px solid var(--ink);
-      border-radius: 50%;
-      font: bold 17px/1 Georgia, serif;
-      letter-spacing: -1px;
+    @media (max-width: 620px) {
+      html { scroll-padding-top: 68px; }
+      .container { width: calc(100% - 40px); }
+      .masthead { min-height: 66px; }
+      .wordmark { font-size: 27px; }
+      .eyebrow { font-size: 10px; letter-spacing: .13em; gap: 10px; }
+      .section-heading { font-size: clamp(33px, 9vw, 45px); line-height: 1.3; letter-spacing: -.045em; }
+      .hero-grid { padding-block: 68px 63px; }
+      .hero h1 { font-size: clamp(43px, 10.8vw, 53px); line-height: 1.2; margin: 28px 0 26px; letter-spacing: -.065em; overflow-wrap: anywhere; }
+      .hero-lead { font-size: 15px; line-height: 1.9; }
+      .hero-actions { gap: 22px; align-items: flex-start; }
+      .text-cta { font-size: 16px; }
+      .hero-aside { margin-top: 31px; font-size: 9px; }
+      .hero-figure { display: none; }
+      .mobile-atlas { display: block; margin-top: 56px; }
+      .mobile-atlas .atlas-label { color: #718198; font: 500 10px/1.5 var(--mono); letter-spacing: .14em; }
+      .mobile-risk { border: 1px solid #c3d0db; padding: 17px 20px; display: flex; justify-content: space-between; align-items: center; gap: 14px; }
+      .mobile-risk strong { font: 500 12px var(--mono); letter-spacing: .11em; }
+      .mobile-risk span { font-size: 11px; color: var(--muted); }
+      .mobile-connector { width: 1px; height: 24px; margin: auto; background: #8ca3bc; }
+      .mobile-capital { padding: 19px 22px; background: var(--blue); color: #fff; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+      .mobile-capital strong { font: 500 18px var(--mono); letter-spacing: .12em; }
+      .mobile-capital small { font-size: 11px; opacity: .9; }
+      .mobile-strategies { border: 1px solid #ccd6e0; border-top: 0; }
+      .mobile-strategy { display: grid; grid-template-columns: 104px 1fr; gap: 10px; border-top: 1px solid #d5dde6; padding: 18px 16px; }
+      .mobile-strategy:first-child { border-top: 0; }
+      .mobile-strategy strong { color: var(--blue); font: 500 11px/1.7 var(--mono); letter-spacing: .045em; }
+      .mobile-strategy span { color: #586879; font-size: 13px; line-height: 1.75; }
+      .mobile-goal { display: flex; justify-content: space-between; align-items: center; padding: 19px 0 0; border-top: 1px solid #91a5bd; margin-top: 24px; gap: 15px; }
+      .mobile-goal strong { color: var(--blue); font: 500 12px/1.6 var(--mono); letter-spacing: .05em; }
+      .mobile-goal span { font-size: 11px; color: #7e8b96; text-align: right; }
+      .ribbon-grid { display: block; min-height: 0; padding-block: 10px; }
+      .ribbon-item { padding: 17px 0; gap: 18px; }
+      .ribbon-item + .ribbon-item { border-left: 0; border-top: 1px solid #485663; padding-left: 0; }
+      .ribbon-id { width: 27px; }
+      .ribbon-label { font-size: 13px; letter-spacing: .08em; }
+      .ribbon-sub { font-size: 12px; }
+      .origin, .philosophy, .system-section, .knowledge { padding-block: 79px 86px; }
+      .origin-grid, .knowledge-grid { gap: 46px; }
+      .origin .body-copy { margin-top: 21px; }
+      .body-copy { font-size: 15px; line-height: 1.92; }
+      .timeline { padding-left: 30px; margin-left: 6px; }
+      .milestone::before { left: -36px; }
+      .milestone { padding-bottom: 37px; }
+      .milestone time { font-size: 18px; }
+      .timeline-foot { margin-left: 5px; }
+      .philosophy-intro { margin-bottom: 32px; }
+      .philosophy-intro > p { font-size: 14px; margin-top: 18px; }
+      .value-row { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 17px; min-height: auto; padding: 27px 0; }
+      .value-number { font-size: 59px; align-self: start; }
+      .value-name { border-left: 1px solid #cbd5df; padding-left: 18px; }
+      .value-name h3 { font-size: 15px; }
+      .value-name p { font-size: 14px; }
+      .value-detail { grid-column: 2; border-left: 0; padding: 0 0 0 18px; font-size: 13px; margin-top: -5px; }
+      .system-intro { margin-bottom: 34px; }
+      .system-intro > p { font-size: 14px; }
+      .risk-frame { display: block; padding: 17px 18px; }
+      .risk-frame strong { display: block; font-size: 12px; }
+      .risk-frame span { display: block; margin-top: 9px; font-size: 12px; }
+      .allocation-line { height: 28px; }
+      .capital-bar { display: block; padding: 19px 20px; }
+      .capital-bar strong { font-size: 15px; }
+      .capital-bar span { display: block; margin-top: 7px; font-size: 12px; }
+      .strategy-grid { display: block; }
+      .strategy { min-height: auto; padding: 25px 21px 30px; }
+      .strategy h3 { font-size: 21px; margin: 10px 0; }
+      .strategy p { max-width: none; }
+      .systems-goal { display: block; }
+      .systems-goal span { display: block; margin-top: 7px; }
+      .knowledge-intro .section-heading { font-size: 36px; }
+      .knowledge-intro .body-copy { margin-top: 18px; }
+      .index-row { grid-template-columns: 30px minmax(0, 1fr); min-height: 81px; gap: 13px; }
+      .index-row h3 { font-size: 14px; }
+      .index-row p { font-size: 12px; }
+      .index-status { display: none; }
+      .closing-grid { display: block; min-height: 0; padding-block: 77px 89px; }
+      .closing h2 { font-size: clamp(37px, 9vw, 48px); }
+      .closing p:not(.eyebrow) { font-size: 14px; }
+      .closing-action { margin-top: 37px; }
+      .closing-action .text-cta { font-size: 15px; }
+      .footer-inner { display: block; min-height: 0; padding-block: 27px 32px; }
+      .footer-note { margin-top: 12px; text-align: left; font-size: 11px; line-height: 1.75; }
     }
-    .brandname { font-size: 15px; font-weight: 800; letter-spacing: .11em; line-height: 1.15; }
-    .navnote { font-size: 12px; letter-spacing: .16em; font-weight: 700; color: var(--muted); }
-    main { position: relative; overflow: hidden; }
-    main::before, main::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(23, 48, 46, .08);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    main::before { width: 630px; height: 630px; top: 3%; right: -250px; }
-    main::after { width: 380px; height: 380px; top: 20%; right: -130px; }
-    .hero {
-      min-height: calc(100svh - 174px);
-      display: grid;
-      align-items: center;
-      position: relative;
-      padding: 100px 0 94px;
-    }
-    .content { max-width: 890px; position: relative; z-index: 1; }
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 33px;
-      font-size: 12px;
-      letter-spacing: .18em;
-      font-weight: 800;
-      color: var(--accent-dark);
-    }
-    .signal { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-    h1 { font-size: clamp(46px, 7.1vw, 104px); line-height: 1.2; letter-spacing: -.055em; margin: 0; font-weight: 800; }
-    h1 em { display: block; font-style: normal; color: var(--accent); }
-    .lead {
-      font-size: clamp(17px, 2vw, 22px);
-      line-height: 1.85;
-      max-width: 690px;
-      color: var(--muted);
-      margin: 32px 0 35px;
-    }
-    .actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      min-height: 56px;
-      padding: 15px 25px;
-      background: var(--ink);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 800;
-      transition: background .2s, transform .2s;
-      border-radius: 3px;
-    }
-    .button:hover { background: #28504c; transform: translateY(-2px); }
-    .button svg { width: 19px; height: 19px; stroke: currentColor; stroke-width: 1.8; fill: none; }
-    .hint { font-size: 14px; color: var(--muted); }
-    .subjects { border-top: 1px solid var(--line); padding: 25px 0 31px; }
-    .subjects-inner { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-    .subjects-label { margin-right: 19px; font-weight: 800; font-size: 12px; letter-spacing: .1em; color: var(--muted); }
-    .chip { border: 1px solid #cdd7d0; border-radius: 50px; padding: 9px 15px; font-size: 13px; font-weight: 700; color: #35514c; }
-    footer { border-top: 1px solid var(--line); }
-    .foot {
-      display: flex;
-      gap: 16px;
-      justify-content: space-between;
-      align-items: center;
-      min-height: 79px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
-    @media (max-width: 680px) {
-      .shell { width: min(100% - 36px, 1160px); }
-      .nav { min-height: 77px; }
-      .mark { width: 36px; height: 36px; font-size: 15px; }
-      .brandname { font-size: 13px; }
-      .navnote { font-size: 10px; letter-spacing: .05em; text-align: right; }
-      .hero { min-height: calc(100svh - 235px); padding: 75px 0 85px; }
-      h1 { font-size: clamp(41px, 11vw, 68px); line-height: 1.27; }
-      .lead { margin: 26px 0 30px; font-size: 17px; }
-      .eyebrow { margin-bottom: 26px; font-size: 10px; }
-      .actions { align-items: flex-start; flex-direction: column; gap: 14px; }
-      .button { width: 100%; }
-      .subjects { padding: 21px 0 24px; }
-      .subjects-label { width: 100%; }
-      .chip { font-size: 12px; padding: 8px 12px; }
-      .foot { align-items: flex-start; flex-direction: column; justify-content: center; padding: 20px 0; min-height: 95px; gap: 8px; }
+    @media (max-width: 370px) {
+      .hero h1 { font-size: 40px; }
+      .mobile-strategy { grid-template-columns: 92px 1fr; }
+      .section-heading { font-size: 32px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .button { transition: none; }
+      .text-cta, .desktop-nav a, .follow-pill { transition: none; }
     }
   </style>
 </head>
-<body>
-  <a class="skip" href="#content">ข้ามไปยังเนื้อหา</a>
-  <header>
-    <div class="shell nav">
-      <a class="brand" href="./" aria-label="Daddy Investor หน้าแรก">
-        <span class="mark" aria-hidden="true">DI</span>
-        <span class="brandname">DADDY<br>INVESTOR</span>
-      </a>
-      <span class="navnote">SURVIVAL FIRST · SYSTEMS OVER INTELLIGENCE</span>
+<body id="top">
+  <a class="skip-link" href="#content">ข้ามไปยังเนื้อหา</a>
+  <header class="site-header">
+    <div class="container masthead">
+      <a class="wordmark" href="#top" aria-label="Daddy Investor หน้าแรก">Daddy Investor</a>
+      <nav class="desktop-nav" aria-label="เมนูหลัก">
+        <a href="#philosophy">แนวคิด</a>
+        <a href="#systems">ระบบลงทุน</a>
+        <a href="#knowledge">คลังความรู้</a>
+      </nav>
+      <span class="header-separator" aria-hidden="true"></span>
+      <a class="follow-pill" href="https://www.facebook.com/daddyinvestor" target="_blank" rel="noopener noreferrer" aria-label="ติดตาม Daddy Investor บน Facebook (เปิดแท็บใหม่)">FOLLOW <span aria-hidden="true">→</span></a>
+      <details class="mobile-menu">
+        <summary aria-label="เปิดเมนูนำทาง">MENU <span class="menu-lines" aria-hidden="true"><i></i><i></i></span></summary>
+        <nav class="mobile-links" aria-label="เมนูมือถือ">
+          <a href="#philosophy">แนวคิด</a>
+          <a href="#systems">ระบบลงทุน</a>
+          <a href="#knowledge">คลังความรู้</a>
+          <a href="https://www.facebook.com/daddyinvestor" target="_blank" rel="noopener noreferrer">ติดตาม Facebook ↗</a>
+        </nav>
+      </details>
     </div>
   </header>
   <main id="content">
-    <section class="shell hero" aria-labelledby="main-heading">
-      <div class="content">
-        <p class="eyebrow"><span class="signal" aria-hidden="true"></span> THE NEXT CHAPTER IS IN PROGRESS</p>
-        <h1 id="main-heading">อยู่ให้รอดก่อน <em>เดี๋ยวกำไรมาเอง</em></h1>
-        <p class="lead">Daddy Investor กำลังสร้างเว็บไซต์ใหม่ให้เป็นคลังความรู้เรื่องการลงทุน การออกแบบระบบ และการบริหารความเสี่ยงที่อ่านง่าย ค้นหาได้ และกลับมาใช้ประโยชน์ได้จริง เพราะเป้าหมายของเงิน ไม่ใช่แค่ตัวเลขในพอร์ต แต่คือเวลาที่เราได้กลับคืนมา</p>
-        <div class="actions">
-          <a class="button" href="https://www.facebook.com/daddyinvestor" target="_blank" rel="noopener noreferrer" aria-label="ติดตาม Daddy Investor ทาง Facebook (เปิดหน้าต่างใหม่)">
-            ติดตาม Daddy Investor บน Facebook
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <span class="hint">เว็บไซต์ใหม่กำลังอยู่ระหว่างการจัดทำ</span>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">DADDY INVESTOR / THE SYSTEMS ATLAS</p>
+          <h1 id="hero-title"><span>อยู่ให้รอดก่อน</span><span>เพื่อมีชีวิตที่เลือกได้</span></h1>
+          <p class="hero-lead">การลงทุนไม่จำเป็นต้องทายตลาดให้ถูกทุกครั้ง สิ่งที่สำคัญกว่าคือการบริหารความเสี่ยงและสร้างระบบที่ทำซ้ำได้ เพื่อให้เงินทำหน้าที่ของมัน และเรามีเวลาให้ชีวิตมากขึ้น</p>
+          <div class="hero-actions">
+            <a class="text-cta" href="#philosophy">สำรวจแนวคิด <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+            <a class="hero-secondary" href="https://www.facebook.com/daddyinvestor" target="_blank" rel="noopener noreferrer">อ่านบทความล่าสุด ↗</a>
+          </div>
+          <div class="hero-aside">RISK FIRST · LONG-TERM THINKING · OPTIONALITY</div>
+        </div>
+        <figure class="hero-figure" aria-label="แผนภาพแนวคิดการจัดสรรทุน: บริหารความเสี่ยงเป็นกรอบของทั้งระบบ แล้วแบ่งบทบาทการลงทุนเป็น Cashflow, Alpha และ Beta">
+          <svg class="hero-diagram" viewBox="0 0 620 530" role="img" aria-labelledby="atlas-svg-title atlas-svg-desc">
+            <title id="atlas-svg-title">The Systems Atlas</title>
+            <desc id="atlas-svg-desc">การบริหารความเสี่ยงกำกับการจัดสรรเงินทุน ระบบ Grid ดูแล Cashflow, Trend Following มองหาโอกาสจากแนวโน้ม และ DCA/ETF เป็นส่วนสะสมระยะยาว โดยมีเวลาและทางเลือกเป็นเป้าหมาย</desc>
+            <g fill="none" stroke="#d1d9e1" stroke-width="1">
+              <path d="M0 112H620M0 263H620M0 421H620M157 20V505M309 20V505M467 20V505" opacity=".55"/>
+              <circle cx="308" cy="264" r="213" stroke-dasharray="3 5" stroke="#afbfce"/>
+              <circle cx="308" cy="264" r="150" stroke="#d3dce5"/>
+              <circle cx="308" cy="264" r="92" stroke="#dce3e9"/>
+              <path d="M308 50V163M308 339V416M116 264H230M385 264H495M385 306L473 418" stroke="#456ba5" stroke-width="1.7"/>
+              <path d="M472 414l5 7-10-1" stroke="#456ba5" stroke-width="1.7"/>
+            </g>
+            <text x="308" y="24" fill="#58728e" text-anchor="middle" font-size="10" letter-spacing="3">RISK FRAMEWORK</text>
+            <path d="M236 35H380" stroke="#91a9c3" stroke-width="1"/>
+            <circle cx="308" cy="51" r="3" fill="#456ba5"/>
+            <g>
+              <circle cx="110" cy="264" r="66" fill="#d3dee9" stroke="#b8cadb"/>
+              <circle cx="504" cy="264" r="66" fill="#d3dee9" stroke="#b8cadb"/>
+              <circle cx="308" cy="442" r="66" fill="#d3dee9" stroke="#b8cadb"/>
+              <rect x="229" y="185" width="158" height="158" fill="#456ba5"/>
+              <text x="308" y="275" fill="#fff" text-anchor="middle" font-size="17" letter-spacing="3">CAPITAL</text>
+              <text x="110" y="270" fill="#20262d" text-anchor="middle" font-size="14">CASHFLOW</text>
+              <text x="504" y="270" fill="#20262d" text-anchor="middle" font-size="14">ALPHA</text>
+              <text x="308" y="448" fill="#20262d" text-anchor="middle" font-size="14">BETA</text>
+              <text x="110" y="358" fill="#6d7c8b" text-anchor="middle" font-size="9" letter-spacing="1">GRID / CLOSE</text>
+              <text x="504" y="358" fill="#6d7c8b" text-anchor="middle" font-size="9" letter-spacing=".5">TREND FOLLOWING</text>
+              <text x="308" y="521" fill="#6d7c8b" text-anchor="middle" font-size="9" letter-spacing="1">DCA / ETF</text>
+            </g>
+            <g fill="#456ba5">
+              <circle cx="308" cy="163" r="3"/><circle cx="308" cy="339" r="3"/><circle cx="229" cy="264" r="3"/><circle cx="387" cy="264" r="3"/>
+            </g>
+            <text x="492" y="424" fill="#456ba5" text-anchor="middle" font-size="10" letter-spacing="1.3">TIME / OPTIONALITY</text>
+          </svg>
+          <figcaption class="diagram-caption">CONCEPTUAL MAP / NOT A FORECAST</figcaption>
+        </figure>
+        <div class="mobile-atlas" aria-label="ระบบลงทุนที่จัดวางตามบทบาท">
+          <div class="atlas-label">SYSTEM LOGIC / CONCEPTUAL VIEW</div>
+          <div class="mobile-risk"><strong>RISK FRAMEWORK</strong><span>กรอบความเสี่ยงของทั้งพอร์ต</span></div>
+          <div class="mobile-connector" aria-hidden="true"></div>
+          <div class="mobile-capital"><strong>CAPITAL</strong><small>จัดสรรเงินทุน</small></div>
+          <div class="mobile-strategies">
+            <div class="mobile-strategy"><strong>CASHFLOW</strong><span>Grid / Close System — บริหารกระแสเงินสดตามแผน</span></div>
+            <div class="mobile-strategy"><strong>ALPHA</strong><span>Trend Following — รับโอกาสจากแนวโน้มระยะยาว</span></div>
+            <div class="mobile-strategy"><strong>BETA</strong><span>DCA / ETF — สะสมสินทรัพย์ระยะยาว</span></div>
+          </div>
+          <div class="mobile-goal"><strong>TIME / OPTIONALITY</strong><span>เป้าหมาย ไม่ใช่คำรับประกัน</span></div>
         </div>
       </div>
     </section>
-    <section class="subjects" aria-label="เรื่องที่เว็บไซต์ใหม่จะพูดถึง">
-      <div class="shell subjects-inner">
-        <span class="subjects-label">WHAT WE EXPLORE</span>
-        <span class="chip">Risk Management</span>
-        <span class="chip">Grid / Close System</span>
-        <span class="chip">Trend Following</span>
-        <span class="chip">DCA / ETF</span>
-        <span class="chip">Portfolio &amp; Options</span>
+    <aside class="ribbon" aria-label="หลักคิดของ Daddy Investor">
+      <div class="container ribbon-grid">
+        <div class="ribbon-item"><span class="ribbon-id">01</span><span><strong class="ribbon-label">SURVIVAL FIRST</strong><span class="ribbon-sub">ความเสี่ยงมาก่อนผลตอบแทน</span></span></div>
+        <div class="ribbon-item"><span class="ribbon-id">02</span><span><strong class="ribbon-label">SYSTEMS OVER INTELLIGENCE</strong><span class="ribbon-sub">ระบบสำคัญกว่าความเก่ง</span></span></div>
+        <div class="ribbon-item"><span class="ribbon-id">03</span><span><strong class="ribbon-label">BUY BACK TIME</strong><span class="ribbon-sub">เงินเป็นเครื่องมือสร้างทางเลือก</span></span></div>
+      </div>
+    </aside>
+    <section class="origin" id="about" aria-labelledby="origin-title">
+      <div class="container origin-grid">
+        <div>
+          <p class="eyebrow"><span class="section-num">01</span> THE PERSON BEHIND THE SYSTEM</p>
+          <h2 class="section-heading" id="origin-title"><span>บทเรียนที่แพงที่สุด</span><span>คือการอยู่ให้รอด</span></h2>
+          <p class="body-copy">ผมเคยขาดทุนจากการเทรดหลายปี เคยเสียเงินกับคอร์สและการตามคนอื่น ประสบการณ์เหล่านั้นทำให้ผมหันมาให้ความสำคัญกับการจัดการความเสี่ยงและการสร้างระบบ มากกว่าพยายามทายตลาดให้ถูกทุกครั้ง</p>
+          <p class="body-copy">วันนี้ผมไม่ได้มองหาสูตรลับที่จะชนะตลาดตลอดเวลา แต่สนใจว่าระบบแบบไหนที่เราทำซ้ำได้ เข้าใจความเสี่ยง และอยู่กับมันได้ในชีวิตจริง</p>
+          <p class="origin-signoff">DADDY GOLF / ALWAYS LEARNING</p>
+        </div>
+        <div>
+          <div class="timeline" aria-label="เส้นทางการเรียนรู้ของ Daddy Investor">
+            <div class="milestone">
+              <time datetime="2011">2011 — 2018</time>
+              <h3>LESSONS</h3>
+              <p>ผ่านช่วงเวลาของการลองผิดลองถูกและบทเรียนราคาแพงจากตลาด เริ่มกลับมาถามว่าความเสี่ยงที่เรารับได้จริงอยู่ตรงไหน</p>
+            </div>
+            <div class="milestone">
+              <time datetime="2019">2019 — NOW</time>
+              <h3>BUILDING SYSTEMS</h3>
+              <p>กลับมาเรียนรู้และพัฒนากระบวนการลงทุนที่ให้ความสำคัญกับความอยู่รอด การจัดสรรทุน และการใช้ชีวิตควบคู่กัน</p>
+            </div>
+          </div>
+          <div class="timeline-foot">REAL EXPERIENCE SHAPES BETTER SYSTEMS</div>
+        </div>
+      </div>
+    </section>
+    <section class="philosophy" id="philosophy" aria-labelledby="philosophy-title">
+      <div class="container">
+        <p class="eyebrow"><span class="section-num">02</span> THE PHILOSOPHY</p>
+        <div class="philosophy-intro">
+          <h2 class="section-heading" id="philosophy-title">สามแนวคิดที่เปลี่ยน<br>วิธีมองการลงทุน</h2>
+          <p>ไม่มีระบบไหนทำให้เราไม่ขาดทุน แต่การมีหลักคิดที่ชัดเจนช่วยให้ตัดสินใจได้สม่ำเสมอขึ้น</p>
+        </div>
+        <div class="values">
+          <article class="value-row">
+            <span class="value-number">01</span>
+            <div class="value-name"><h3>SURVIVAL FIRST</h3><p>อยู่ให้รอดก่อน เดี๋ยวกำไรมาเอง</p></div>
+            <div class="value-detail">ก่อนคิดถึงกำไร ต้องรู้จักขอบเขตความเสี่ยงที่ตัวเองรับได้</div>
+            <div class="value-icon" aria-hidden="true"><svg viewBox="0 0 116 86"><circle cx="55" cy="43" r="32"/><circle cx="55" cy="43" r="5" fill="#456ba5" stroke="none"/><path d="M55 4v78M16 43h78" class="accent"/></svg></div>
+          </article>
+          <article class="value-row">
+            <span class="value-number">02</span>
+            <div class="value-name"><h3>SYSTEMS OVER INTELLIGENCE</h3><p>ระบบสำคัญกว่าความเก่ง</p></div>
+            <div class="value-detail">กระบวนการที่ทำซ้ำได้ สำคัญกว่าการเดาตลาดให้ถูกทุกครั้ง</div>
+            <div class="value-icon" aria-hidden="true"><svg viewBox="0 0 116 86"><circle cx="39" cy="43" r="29"/><circle cx="76" cy="43" r="29"/><circle cx="57" cy="43" r="5" fill="#456ba5" stroke="none"/><path d="M57 4v78" class="accent"/></svg></div>
+          </article>
+          <article class="value-row">
+            <span class="value-number">03</span>
+            <div class="value-name"><h3>BUY BACK TIME</h3><p>ใช้เงินซื้อเวลากลับคืน</p></div>
+            <div class="value-detail">เป้าหมายไม่ใช่แค่พอร์ตที่ใหญ่ขึ้น แต่คือทางเลือกในชีวิตที่มากขึ้น</div>
+            <div class="value-icon" aria-hidden="true"><svg viewBox="0 0 116 86"><circle cx="44" cy="43" r="28"/><path d="M44 43h62M96 34l10 9-10 9" class="accent"/></svg></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="system-section" id="systems" aria-labelledby="systems-title">
+      <div class="container">
+        <p class="eyebrow"><span class="section-num">03</span> THE SYSTEMS ATLAS</p>
+        <div class="system-intro">
+          <h2 class="section-heading" id="systems-title">แต่ละระบบมีหน้าที่.<br>ไม่มีระบบไหนทำทุกอย่าง.</h2>
+          <p>ระบบลงทุนแต่ละแบบช่วยจัดการโจทย์คนละเรื่อง สิ่งสำคัญคือรู้บทบาทของมันและความเสี่ยงที่ต้องรับ</p>
+        </div>
+        <div class="risk-frame"><strong>RISK MANAGEMENT / THE FRAMEWORK</strong><span>ขอบเขตความเสี่ยงและเงินสำรองเป็นกรอบของทุกการตัดสินใจ</span></div>
+        <div class="allocation-line" aria-hidden="true"></div>
+        <div class="capital-bar"><strong>CAPITAL ALLOCATION</strong><span>จัดสรรทุนให้แต่ละระบบตามหน้าที่และความเสี่ยง</span></div>
+        <div class="strategy-grid">
+          <article class="strategy"><span class="strategy-key">01 / CASHFLOW</span><h3>Grid / Close System</h3><p>ทำงานกับกรอบราคาและการปิดรอบตามแผน ต้องเตรียมเงินรองรับกรณีราคาหลุดโซน และเข้าใจความเสี่ยงของเงินที่ค้างอยู่</p></article>
+          <article class="strategy"><span class="strategy-key">02 / ALPHA</span><h3>Trend Following</h3><p>มองหาโอกาสจากแนวโน้มระยะยาว พร้อมยอมรับช่วงที่ระบบผิดทางหรือผลตอบแทนไม่สม่ำเสมอ</p></article>
+          <article class="strategy"><span class="strategy-key">03 / BETA</span><h3>DCA / ETF</h3><p>ทยอยสะสมสินทรัพย์ระยะยาวตามสัดส่วนที่วางไว้ โดยไม่ลืมความเสี่ยงของตลาดและช่วงเวลาที่ต้องใช้เงิน</p></article>
+        </div>
+        <div class="systems-goal"><strong>TIME / OPTIONALITY →</strong><span>เป้าหมายของการจัดระบบเงินทุน ไม่ใช่ผลลัพธ์ที่รับประกันได้</span></div>
+      </div>
+    </section>
+    <section class="knowledge" id="knowledge" aria-labelledby="knowledge-title">
+      <div class="container knowledge-grid">
+        <div class="knowledge-intro">
+          <p class="eyebrow"><span class="section-num">04</span> KNOWLEDGE INDEX</p>
+          <h2 class="section-heading" id="knowledge-title">สำรวจองค์ความรู้<br>เพื่อการลงทุน<br>ที่ยั่งยืน</h2>
+          <p class="body-copy">ผมกำลังจัดความรู้เรื่องการลงทุนให้เข้าใจง่ายขึ้นว่าแต่ละระบบมีหน้าที่อะไร ใช้ในสถานการณ์แบบไหน และต้องระวังความเสี่ยงเรื่องใด</p>
+          <p class="knowledge-note">คลังบทความฉบับเต็มกำลังอยู่ระหว่างการจัดทำ</p>
+        </div>
+        <div class="index-list" aria-label="หมวดความรู้ที่กำลังพัฒนา">
+          <div class="index-row"><span class="index-id">01</span><div><h3>RISK MANAGEMENT</h3><p>เข้าใจความเสี่ยง ก่อนคิดถึงผลตอบแทน</p></div><span class="index-status">IN PROGRESS</span></div>
+          <div class="index-row"><span class="index-id">02</span><div><h3>GRID / CLOSE SYSTEM</h3><p>ระบบบริหารโซนราคาและกระแสเงินสด</p></div><span class="index-status">IN PROGRESS</span></div>
+          <div class="index-row"><span class="index-id">03</span><div><h3>TREND FOLLOWING</h3><p>รับโอกาสจากแนวโน้ม พร้อมจัดการช่วงผิดทาง</p></div><span class="index-status">IN PROGRESS</span></div>
+          <div class="index-row"><span class="index-id">04</span><div><h3>DCA / ETF</h3><p>ทยอยสะสมและกระจายการลงทุนระยะยาว</p></div><span class="index-status">IN PROGRESS</span></div>
+          <div class="index-row"><span class="index-id">05</span><div><h3>OPTIONS &amp; PORTFOLIO</h3><p>เครื่องมือบริหารความเสี่ยงและทางเลือก</p></div><span class="index-status">IN PROGRESS</span></div>
+          <div class="index-row"><span class="index-id">06</span><div><h3>CAPITAL ALLOCATION</h3><p>กำหนดบทบาทของเงินทุนและขอบเขตความเสี่ยง</p></div><span class="index-status">IN PROGRESS</span></div>
+        </div>
+      </div>
+    </section>
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="container closing-grid">
+        <div>
+          <p class="eyebrow">05 / THE NEXT CHAPTER</p>
+          <h2 id="closing-title">ความรู้ที่เติบโต<br>ไปกับชีวิต</h2>
+          <p>เว็บไซต์ใหม่กำลังค่อย ๆ รวบรวมแนวคิดและบทเรียนให้เป็นคลังความรู้ที่กลับมาใช้ประโยชน์ได้ ระหว่างนี้ติดตามสิ่งที่ผมกำลังเรียนรู้และแบ่งปันได้บน Facebook</p>
+        </div>
+        <div class="closing-action">
+          <a class="text-cta" href="https://www.facebook.com/daddyinvestor" target="_blank" rel="noopener noreferrer">ติดตาม Daddy Investor <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          <small>THE LONG GAME CONTINUES</small>
+        </div>
       </div>
     </section>
   </main>
-  <footer>
-    <div class="shell foot">
-      <span>© 2026 Daddy Investor · ระบบสำคัญกว่าความเก่ง</span>
-      <span>เนื้อหาสำหรับการศึกษา ไม่ใช่คำแนะนำการลงทุน</span>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a class="wordmark" href="#top">Daddy Investor</a>
+      <div class="footer-note">© 2026 Daddy Investor · เนื้อหาเพื่อการศึกษา ไม่ใช่คำแนะนำการลงทุน</div>
     </div>
   </footer>
 </body>
