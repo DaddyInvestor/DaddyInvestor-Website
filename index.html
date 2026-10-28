@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ec">
+  <title>Daddy Investor — อยู่ให้รอดก่อน เดี๋ยวกำไรมาเอง</title>
+  <meta name="description" content="Daddy Investor กำลังสร้างคลังความรู้ใหม่เรื่องการลงทุน ระบบเทรด การบริหารความเสี่ยง และการใช้เงินซื้อเวลากลับคืนให้ชีวิต">
+  <link rel="canonical" href="https://daddyinvestor.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="th_TH">
+  <meta property="og:site_name" content="Daddy Investor">
+  <meta property="og:title" content="Daddy Investor — อยู่ให้รอดก่อน เดี๋ยวกำไรมาเอง">
+  <meta property="og:description" content="เว็บไซต์กำลังปรับปรุง เพื่อสร้างคลังความรู้การลงทุนที่เข้าถึงง่ายและใช้งานได้จริง">
+  <meta property="og:url" content="https://daddyinvestor.com/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Daddy Investor",
+    "url": "https://daddyinvestor.com/",
+    "sameAs": ["https://www.facebook.com/daddyinvestor"],
+    "description": "พื้นที่แบ่งปันความรู้เกี่ยวกับระบบการลงทุนและการบริหารความเสี่ยง"
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f3ec;
+      --ink: #17302e;
+      --muted: #5d6d68;
+      --line: #d7ddd6;
+      --accent: #b66843;
+      --accent-dark: #945234;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Noto Sans Thai", "Sarabun", Tahoma, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .skip {
+      position: absolute;
+      top: -100px;
+      left: 12px;
+      z-index: 10;
+      padding: 10px 16px;
+      background: white;
+    }
+    .skip:focus { top: 12px; }
+    .shell { width: min(1160px, calc(100% - 52px)); margin: auto; }
+    header { border-bottom: 1px solid var(--line); }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      min-height: 94px;
+    }
+    .brand { display: flex; align-items: center; gap: 13px; text-decoration: none; }
+    .mark {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      border: 1.8px solid var(--ink);
+      border-radius: 50%;
+      font: bold 17px/1 Georgia, serif;
+      letter-spacing: -1px;
+    }
+    .brandname { font-size: 15px; font-weight: 800; letter-spacing: .11em; line-height: 1.15; }
+    .navnote { font-size: 12px; letter-spacing: .16em; font-weight: 700; color: var(--muted); }
+    main { position: relative; overflow: hidden; }
+    main::before, main::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(23, 48, 46, .08);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    main::before { width: 630px; height: 630px; top: 3%; right: -250px; }
+    main::after { width: 380px; height: 380px; top: 20%; right: -130px; }
+    .hero {
+      min-height: calc(100svh - 174px);
+      display: grid;
+      align-items: center;
+      position: relative;
+      padding: 100px 0 94px;
+    }
+    .content { max-width: 890px; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 33px;
+      font-size: 12px;
+      letter-spacing: .18em;
+      font-weight: 800;
+      color: var(--accent-dark);
+    }
+    .signal { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    h1 { font-size: clamp(46px, 7.1vw, 104px); line-height: 1.2; letter-spacing: -.055em; margin: 0; font-weight: 800; }
+    h1 em { display: block; font-style: normal; color: var(--accent); }
+    .lead {
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.85;
+      max-width: 690px;
+      color: var(--muted);
+      margin: 32px 0 35px;
+    }
+    .actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      min-height: 56px;
+      padding: 15px 25px;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 800;
+      transition: background .2s, transform .2s;
+      border-radius: 3px;
+    }
+    .button:hover { background: #28504c; transform: translateY(-2px); }
+    .button svg { width: 19px; height: 19px; stroke: currentColor; stroke-width: 1.8; fill: none; }
+    .hint { font-size: 14px; color: var(--muted); }
+    .subjects { border-top: 1px solid var(--line); padding: 25px 0 31px; }
+    .subjects-inner { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .subjects-label { margin-right: 19px; font-weight: 800; font-size: 12px; letter-spacing: .1em; color: var(--muted); }
+    .chip { border: 1px solid #cdd7d0; border-radius: 50px; padding: 9px 15px; font-size: 13px; font-weight: 700; color: #35514c; }
+    footer { border-top: 1px solid var(--line); }
+    .foot {
+      display: flex;
+      gap: 16px;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 79px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    @media (max-width: 680px) {
+      .shell { width: min(100% - 36px, 1160px); }
+      .nav { min-height: 77px; }
+      .mark { width: 36px; height: 36px; font-size: 15px; }
+      .brandname { font-size: 13px; }
+      .navnote { font-size: 10px; letter-spacing: .05em; text-align: right; }
+      .hero { min-height: calc(100svh - 235px); padding: 75px 0 85px; }
+      h1 { font-size: clamp(41px, 11vw, 68px); line-height: 1.27; }
+      .lead { margin: 26px 0 30px; font-size: 17px; }
+      .eyebrow { margin-bottom: 26px; font-size: 10px; }
+      .actions { align-items: flex-start; flex-direction: column; gap: 14px; }
+      .button { width: 100%; }
+      .subjects { padding: 21px 0 24px; }
+      .subjects-label { width: 100%; }
+      .chip { font-size: 12px; padding: 8px 12px; }
+      .foot { align-items: flex-start; flex-direction: column; justify-content: center; padding: 20px 0; min-height: 95px; gap: 8px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#content">ข้ามไปยังเนื้อหา</a>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="./" aria-label="Daddy Investor หน้าแรก">
+        <span class="mark" aria-hidden="true">DI</span>
+        <span class="brandname">DADDY<br>INVESTOR</span>
+      </a>
+      <span class="navnote">SURVIVAL FIRST · SYSTEMS OVER INTELLIGENCE</span>
+    </div>
+  </header>
+  <main id="content">
+    <section class="shell hero" aria-labelledby="main-heading">
+      <div class="content">
+        <p class="eyebrow"><span class="signal" aria-hidden="true"></span> THE NEXT CHAPTER IS IN PROGRESS</p>
+        <h1 id="main-heading">อยู่ให้รอดก่อน <em>เดี๋ยวกำไรมาเอง</em></h1>
+        <p class="lead">Daddy Investor กำลังสร้างเว็บไซต์ใหม่ให้เป็นคลังความรู้เรื่องการลงทุน การออกแบบระบบ และการบริหารความเสี่ยงที่อ่านง่าย ค้นหาได้ และกลับมาใช้ประโยชน์ได้จริง เพราะเป้าหมายของเงิน ไม่ใช่แค่ตัวเลขในพอร์ต แต่คือเวลาที่เราได้กลับคืนมา</p>
+        <div class="actions">
+          <a class="button" href="https://www.facebook.com/daddyinvestor" target="_blank" rel="noopener noreferrer" aria-label="ติดตาม Daddy Investor ทาง Facebook (เปิดหน้าต่างใหม่)">
+            ติดตาม Daddy Investor บน Facebook
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <span class="hint">เว็บไซต์ใหม่กำลังอยู่ระหว่างการจัดทำ</span>
+        </div>
+      </div>
+    </section>
+    <section class="subjects" aria-label="เรื่องที่เว็บไซต์ใหม่จะพูดถึง">
+      <div class="shell subjects-inner">
+        <span class="subjects-label">WHAT WE EXPLORE</span>
+        <span class="chip">Risk Management</span>
+        <span class="chip">Grid / Close System</span>
+        <span class="chip">Trend Following</span>
+        <span class="chip">DCA / ETF</span>
+        <span class="chip">Portfolio &amp; Options</span>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="shell foot">
+      <span>© 2026 Daddy Investor · ระบบสำคัญกว่าความเก่ง</span>
+      <span>เนื้อหาสำหรับการศึกษา ไม่ใช่คำแนะนำการลงทุน</span>
+    </div>
+  </footer>
+</body>
+</html>
